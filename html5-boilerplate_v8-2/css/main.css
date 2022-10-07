@@ -15,6 +15,7 @@ html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
+  scroll-behavior: smooth;
 }
 
 /*
@@ -86,6 +87,86 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+  * {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 500;
+    color: #fff;
+  }
+   cite {
+  font-family: 'Orbitron', sans-serif;
+  z-index: 2;
+}
+  .cite {
+    position: relative;
+    font-weight: 900;
+    font-size: 1.3em;
+    z-index: 1;
+    text-shadow: 0px 0px 1.2px rgb(0, 0, 0),
+      0px 0px 4px rgb(0, 0, 0), 0px 0px 18px rgba(0, 0, 0, 0.21);
+  }
+  .cite::before {
+    content: open-quote;
+    color: rgba(255, 255, 255, 0.795);
+    font-size: 5rem;
+    line-height: 0;
+    position: relative;
+    z-index: -1;
+    top: 0.4em;
+    right: -0.3em;
+  }
+  .cite::after {
+    content: close-quote;
+    color: rgba(255, 255, 255, 0.803);
+    line-height: 0;
+    font-size: 5rem;
+    position: relative;
+    top: 0.4em;
+    left: -0.4em;
+    z-index: -1;
+  }
+h1 {
+  font-size: 3em;
+  row-gap: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+h2 {
+  font-size: 2.5em;
+  row-gap: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+h3 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+h4 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3em;
+  font-weight: 500;
+}
+.underline::after {
+  display: block;
+  position: relative;
+  background-color: rgba(253, 253, 253, 0.309);
+  content: "";
+  height: 10px;
+  width: 70%;
+  border-radius: 5px;
+  left: 0px;
+  z-index: 1;
+}
+
+/* ------------------------ Arrow Down -------------------------------*/
+.arrow-down{
+  padding-left: 7em;
+  position: relative;
+    top: 0px;
+    transition: top 0.5s;
+}
+.arrow-down:hover {
+top: 12px;
+}
+
 
 /* ==========================================================================
    Helper classes
@@ -260,4 +341,279 @@ textarea {
     page-break-after: avoid;
   }
 }
+.minus-margin-top {
+  margin-top: -1em;
+}
+.full-height {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.outline {
+  outline: 5px solid red;
+}
+/* ------------------------ Header -------------------------------*/
+.header-menu {
+  position: sticky;
+  top: 0;
+  opacity: 0.9;
+  height: 4rem;
+  width: 100vw;
+  background-image: url("/img/connected-world-5.jpg");
+  background-size: cover;
+  background-position: 0% 7%;
+  background-color: rgb(0, 136, 255);
+  background-blend-mode: multiply;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4rem;
+}
+button {
+  background-color: rgba(0, 30, 255, 0.53);
+  border-radius: 15px;
+  border: 5px solid rgb(37, 0, 0);
+  transition: ease 1s;
+  padding: 0.5em;
+  font-weight: 700;
+  font-size: 1.2rem;
+  filter: drop-shadow(39px 5px 20px #000);
+  cursor: pointer;
+}
+button:hover {
+background: none;
+}
+header > p > a {
+  text-decoration: none;
+  font-style: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: 5px solid rgba(33, 0, 0, 0.732);
+  padding: 0.3em;
+  border-radius: 15px;
+}
+/* ------------------------ Intro Page -------------------------------*/
+.intro-page {
+  background: url('/img/blockchain.jpg');
+  background-size: cover;
+  background-color: rgb(66, 58, 48);
+  background-blend-mode: multiply;
+  align-items: center;
+}
 
+.intro-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  column-gap: 2em;
+  color: rgb(255, 255, 255);
+}
+.intro-text {
+width: 50%;
+font-family: 'Urbanist', sans-serif;
+}
+/* ------------------------ Main Page -------------------------------*/
+.main-page {
+  display: flex;
+  flex-direction: row;
+  background-color: rgba(0, 3, 22, 0.832);
+  background-image: url('/img/connected-world.jpg');
+  background-size: cover;
+  background-blend-mode: darken;
+  min-height: 120vh;
+  padding-top: 6em;
+  padding-bottom: 6em;
+}
+/* ------------------------ Main Page - Aside -------------------------------*/
+.about-me {
+  width: 30%;
+  margin: 2em;
+  background-image: url('/img/connected-world-4.jpg');
+  background-size: cover;
+  background-color: rgba(7, 7, 16, 0.784);
+  background-blend-mode: darken;
+  border-radius: 30px;
+  color: #fff;
+  box-shadow:
+  0px 0px 1.8px -4px rgba(0, 0, 0, 0.417),
+  0px 0px 3.4px -4px rgba(0, 0, 0, 0.631),
+  0px 0px 5.2px -4px rgba(0, 0, 0, 0.752),
+  0px 0px 7.9px -4px rgba(0, 0, 0, 0.819),
+  0px 0px 13.6px -4px rgba(0, 0, 0, 0.852),
+  0px 0px 27.3px -4px rgba(0, 0, 0, 0.872),
+  0px 0px 63px -4px rgba(0, 0, 0, 1);
+  padding: 1.5em;
+  padding-bottom: 3em;
+  opacity: 0.9;
+  height: fit-content;
+
+}
+.scss {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+ .about-me > ul {
+ list-style: none;
+ line-height: 3rem;
+}
+.about-me > ul > li {
+  background: url(/img/plus.png) left center no-repeat;
+  padding-left: 3rem;
+  font-weight: 700;
+  font-size: 1.2em;
+
+}
+/* ------------------------ Main Page - Experience -------------------------------*/
+.experience {
+  position: relative;
+  width: 70%;
+  margin: 1em;
+  margin-right: 4em;
+}
+
+.contact {
+  min-width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  margin: 1em;
+  cursor: pointer;
+}
+
+.breaker > div + div::before {
+  display: block;
+  content: '';
+  height: 4px;
+  width: 100%;
+  background-color: blue;
+  border-radius: 2px;
+  opacity: 0.5;
+  position: absolute;
+  top: -2rem;
+  
+}
+.experience-text{
+  position: relative;
+  min-height: 10rem;
+  margin-bottom: 3rem;
+}
+.company-logo {
+ position: absolute;
+ top: 0.5rem;
+ left: 0;
+ border-radius: 20%;
+}
+.experience-text > p, .experience-text > h4 {
+  padding-left: 11rem;
+}
+.length {
+  font-style: italic;
+  font-weight: bold;
+}
+/* ------------------------ Contact Page -------------------------------*/
+.contact-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/img/guerrillabuzz-crypto-pr-1Auj1kefb2E-unsplash.jpg');
+  background-size: cover;
+}
+.contact-me {
+  color: rgb(0, 0, 0);
+  font-size: 4em;
+  font-weight: 700;
+  text-shadow: 0px 0px 15px #fffafa;
+}
+.glow-hover:hover {
+ filter: drop-shadow(3px -2px 8px #fefefe);
+ transition: 0.5s ease;
+}
+.item > a > p {
+  position: relative;
+  text-align: center;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.736);
+  font-size: 1.5em;
+}
+.contact > div {
+  padding-left: 2rem;
+}
+.item > a {
+  text-decoration: none;
+}
+
+/* ------------------------ Mobile View -------------------------------*/
+@media screen and (max-width: 734px) {
+ .full-height {
+  height: fit-content;
+  padding-bottom: 3rem;
+ }
+  .me {
+  visibility: collapse;
+ }
+ .intro-info {
+  display: block;
+  position: relative;
+ }
+ .intro-text {
+  width: 100%;
+  position: absolute;
+  top: 4rem;
+ }
+ .arrow-down {
+  visibility: collapse;
+ }
+ .header-menu {
+  z-index: 2;
+ }
+ .main-page {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ .about-me {
+  width: 80%;
+ }
+ .experience {
+  margin-right: 0em;
+ }
+ .company-logo {
+  visibility: collapse;
+ }
+ .experience-text > p, .experience-text > h4 {
+  padding-left: 0rem;
+ }
+ .contact-page {
+  background-image: url('/img/blockchain.jpg');
+  background-color: rgba(21, 0, 0, 0.577);
+  background-blend-mode: darken;
+ }
+ .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+ .contact-me {
+  font-size: 3rem;
+ }
+ .item{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+ .adress {
+  position: relative;
+  left: 20%;
+ }
+ .contact > div {
+  padding: 0;
+ }
+}
