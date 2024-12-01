@@ -169,44 +169,92 @@ h4 {
 
 /* ------------------------ Header -------------------------------*/
 .header-menu {
-  position: sticky;
+  position: fixed;
   top: 0;
-  opacity: 0.9;
+  left: 0;
+  z-index: 1000;
+  opacity: 0.95;
   height: 4rem;
-  width: 100vw;
-  background-image: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/connected-world-5.png");
-  background-size: cover;
-  background-position: 0% 7%;
-  background-color: rgb(0, 136, 255);
-  background-blend-mode: multiply;
+  width: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 136, 255, 0.8));
+  backdrop-filter: blur(8px);
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  column-gap: 4rem;
+  padding: 0 2rem;
+  gap: 2rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
 }
-button {
-  background-color: rgba(0, 30, 255, 0.53);
-  border-radius: 15px;
-  border: 5px solid rgb(37, 0, 0);
-  transition: ease 1s;
-  padding: 0.5em;
-  font-weight: 700;
-  font-size: 1.2rem;
-  filter: drop-shadow(39px 5px 20px #000);
+
+.header-menu a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.header-menu button {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  background: rgba(0, 30, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
   cursor: pointer;
 }
-button:hover {
-  background: none;
+
+.header-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
-header > nav > p > a {
-  text-decoration: none;
-  font-style: none;
-  font-weight: 700;
-  font-size: 1.2rem;
-  border: 5px solid rgba(33, 0, 0, 0.732);
-  padding: 0.3em;
-  border-radius: 15px;
+
+.header-menu button:hover {
+  background: rgba(0, 30, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
 }
+
+.header-menu a::before, .header-menu button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.header-menu a:hover::before, .header-menu button:hover::before {
+  left: 100%;
+}
+
 /* ------------------------ Intro Page -------------------------------*/
 .intro-page {
   background: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/blockchain.jpg");
@@ -281,6 +329,16 @@ header > nav > p > a {
   font-weight: 700;
   font-size: 1.2em;
 }
+.about-me {
+  ul {
+    li {
+      img {
+        border-radius: 8px;
+        margin-right: 0.2em;
+      }
+    }
+  }
+}
 /* ------------------------ Main Page - Experience -------------------------------*/
 .experience {
   position: relative;
@@ -334,11 +392,41 @@ header > nav > p > a {
   flex-direction: column;
 }
 .contact {
-  min-width: 70%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact .item {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.contact .item a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
+}
+.contact .item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.contact .item:hover {
+  transform: translateY(-5px);
+}
+.contact .item:hover img {
+  transform: scale(1.1);
+}
+.contact .item p {
+  margin: 0;
+  font-weight: 500;
+  color: white;
 }
 .contact-me {
   color: rgb(0, 0, 0);
@@ -402,7 +490,6 @@ header > nav > p > a {
     position: relative;
     width: 80vw;
     min-height: fit-content;
-  
   }
   .intro-text {
     position: absolute;
@@ -643,4 +730,42 @@ header > nav > p > a {
 }
 .outline {
   outline: 5px solid red;
+}
+
+/* Center about-me section on mobile */
+@media (max-width: 768px) {
+  .main-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-me {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    h4 {
+      width: 100%;
+      margin: 1.5rem 0 1rem 0;
+    }
+  }
 }
