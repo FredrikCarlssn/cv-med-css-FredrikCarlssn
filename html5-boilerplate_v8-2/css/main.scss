@@ -16,6 +16,7 @@ html {
   font-size: 1em;
   line-height: 1.4;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 /*
@@ -219,13 +220,21 @@ h4 {
 }
 
 .header-menu a[href="#contact"] {
-  background: linear-gradient(135deg, rgba(0, 30, 255, 0.2), rgba(0, 136, 255, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 30, 255, 0.2),
+    rgba(0, 136, 255, 0.3)
+  );
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
 }
 
 .header-menu a[href="#contact"]:hover {
-  background: linear-gradient(135deg, rgba(0, 30, 255, 0.3), rgba(0, 136, 255, 0.4));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 30, 255, 0.3),
+    rgba(0, 136, 255, 0.4)
+  );
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 0 15px rgba(0, 30, 255, 0.2);
@@ -241,14 +250,22 @@ h4 {
   position: relative;
   overflow: hidden;
   white-space: nowrap;
-  background: linear-gradient(135deg, rgba(0, 30, 255, 0.2), rgba(0, 136, 255, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 30, 255, 0.2),
+    rgba(0, 136, 255, 0.3)
+  );
   border: 1px solid rgba(255, 255, 255, 0.2);
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
 }
 
 .header-menu button:hover {
-  background: linear-gradient(135deg, rgba(0, 30, 255, 0.3), rgba(0, 136, 255, 0.4));
+  background: linear-gradient(
+    135deg,
+    rgba(0, 30, 255, 0.3),
+    rgba(0, 136, 255, 0.4)
+  );
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-2px);
   box-shadow: 0 0 15px rgba(0, 30, 255, 0.2);
