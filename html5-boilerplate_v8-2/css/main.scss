@@ -175,9 +175,12 @@ h4 {
   z-index: 1000;
   opacity: 0.95;
   height: 4rem;
-  width: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 136, 255, 0.8));
-  backdrop-filter: blur(8px);
+  width: 100vw;
+  background-image: url("https://about.acc.technology/img/connected-world-5.png");
+  background-size: cover;
+  background-position: 0% 7%;
+  background-color: rgb(0, 136, 255);
+  background-blend-mode: multiply;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -257,7 +260,7 @@ h4 {
 
 /* ------------------------ Intro Page -------------------------------*/
 .intro-page {
-  background: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/blockchain.jpg");
+  background: url("https://about.acc.technology/img/blockchain.jpg");
   background-size: cover;
   background-color: rgb(66, 58, 48);
   background-blend-mode: multiply;
@@ -286,7 +289,7 @@ h4 {
   display: flex;
   flex-direction: row;
   background-color: rgba(0, 3, 22, 0.832);
-  background-image: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/connected-world.jpg");
+  background-image: url("https://about.acc.technology/img/connected-world.jpg");
   background-size: cover;
   background-blend-mode: darken;
   min-height: 120vh;
@@ -297,7 +300,7 @@ h4 {
 .about-me {
   width: 30%;
   margin: 2em;
-  background-image: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/connected-world-4.jpg");
+  background-image: url("https://about.acc.technology/img/connected-world-4.jpg");
   background-size: cover;
   background-color: rgba(7, 7, 16, 0.784);
   background-blend-mode: darken;
@@ -317,14 +320,15 @@ h4 {
 .scss {
   padding-right: 1rem;
   padding-left: 1rem;
+  padding-bottom: 0.5rem;
 }
 .about-me > ul {
   list-style: none;
   line-height: 3rem;
 }
 .about-me > ul > li {
-  background: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/plus.png")
-    left center no-repeat;
+  background: url("https://about.acc.technology/img/plus.png") left center
+    no-repeat;
   padding-left: 3rem;
   font-weight: 700;
   font-size: 1.2em;
@@ -387,7 +391,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/connected-world-6.jpg");
+  background-image: url("https://about.acc.technology/img/connected-world-6.jpg");
   background-size: cover;
   flex-direction: column;
 }
@@ -521,7 +525,7 @@ h4 {
     padding-left: 0rem;
   }
   .contact-page {
-    background-image: url("https://medieinstitutet.github.io/cv-med-css-FredrikCarlssn/img/blockchain.jpg");
+    background-image: url("https://about.acc.technology/img/blockchain.jpg");
     background-color: rgba(21, 0, 0, 0.577);
     background-blend-mode: darken;
   }
